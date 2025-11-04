@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { Riddle } from './types/riddle.types';
 import RiddleCard from './components/RiddleCard';
 import Navigation from './components/Navigation';
-import '../styles/globals.css';
+import './styles/globals.css';
 
 const App: React.FC = () => {
   const [riddles, setRiddles] = useState<Riddle[]>([]);
