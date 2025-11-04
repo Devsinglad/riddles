@@ -1,7 +1,7 @@
-import App from "../components/App";
+import App from "../App";
 import type { Route } from "./+types/home";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Tech Riddles Challenge" },
     { name: "description", content: "Test your knowledge with fun tech-themed riddles!" },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import type { Riddle } from '../types/riddle.types';
-import RiddleCard from './RiddleCard';
-import Navigation from './Navigation';
+import type { Riddle } from './types/riddle.types';
+import RiddleCard from './components/RiddleCard';
+import Navigation from './components/Navigation';
 import '../styles/globals.css';
 
 const App: React.FC = () => {
@@ -16,11 +16,11 @@ const App: React.FC = () => {
       try {
         setLoading(true);
         const response = await fetch('/data/riddles.json');
-        
+
         if (!response.ok) {
           throw new Error(`Failed to fetch riddles: ${response.status}`);
         }
-        
+
         const data = await response.json();
         setRiddles(data);
         setError(null);
@@ -97,14 +97,14 @@ const App: React.FC = () => {
         <h1>Tech Riddles Challenge</h1>
         <p>Test your knowledge with fun tech-themed riddles!</p>
       </header>
-      
+
       <main className="app-main">
         <RiddleCard
           riddle={currentRiddle}
           isAnswerRevealed={isAnswerRevealed}
           onRevealAnswer={handleRevealAnswer}
         />
-        
+
         <Navigation
           currentIndex={currentIndex}
           totalRiddles={riddles.length}
@@ -112,7 +112,7 @@ const App: React.FC = () => {
           onNext={handleNext}
         />
       </main>
-      
+
       <footer className="app-footer">
         <p>© 2024 Tech Riddles Challenge</p>
       </footer>
