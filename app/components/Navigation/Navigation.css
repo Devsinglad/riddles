@@ -1,0 +1,117 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.navigation-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.riddle-counter {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a5568;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  min-width: 120px;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.nav-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.nav-button:disabled {
+  background: linear-gradient(135deg, #cbd5e0 0%, #a0aec0 100%);
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+.prev-button {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.prev-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #3182ce 0%, #4299e1 100%);
+  box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
+}
+
+.next-button {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.next-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #38a169 0%, #48bb78 100%);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .navigation-info {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .navigation-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav-button {
+    flex: 1;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  
+  .nav-button {
+    width: 100%;
+    max-width: none;
+  }
+}
